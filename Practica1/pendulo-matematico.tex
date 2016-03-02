@@ -1,0 +1,196 @@
+\documentclass[12pt]{article}
+\usepackage[spanish]{babel}
+\usepackage{natbib}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\usepackage{parskip}
+\usepackage{fancyhdr}
+\usepackage{vmargin}
+\usepackage{float}
+
+\title{Péndulo matemático}
+\author{Rosa Luz Zamora Peinado}
+\begin{document}
+\maketitle
+
+\textbf{Introducción}\\
+
+El llamado péndulo simple es una idealización de un "péndulo real" pero en un sistema aislado utilizando las siguientes consideraciones:
+
+\begin{itemize}
+\item La cuerda en la que el péndulo se balancea no tiene masa, no es elástica y permanece tensa.
+\item La lenteja es una maa puntual.
+\item El movimiento ocurre solo en dos dimensiones, i.e. la lenteja no traza una elipse sino un arco.
+\item El movimiento no pierde energía por fricción o por la resistencia del aire.
+\item El campo gravitacional es uniforme.
+\item El soporte no se mueve.
+\item La ecuación diferencial que representa el movimiento de un péndulo simple es:
+\begin{equation}
+\frac{d^2 \theta}{dt^2}+\frac{g}{l}\sin\theta=0
+\end{equation}
+donde $g$ es la aceleración de la gravedad, $l$ es la longitud de la cuerda y $\theta$ el desplazamiento angular.
+\end{itemize}
+
+\textbf{"Fuerza". Derivación de Ec. (1)}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.6]{figura1}
+\caption{Diagrama de fuerza para un péndulo simple.}
+\end{figure}
+La figura 1 muestra las fuerzas actuando en un péndulo simple. Note que la trayectoria del péndulo barre un arco de un círculo. El ángulo $\theta$ está medido en radianes y es crucial para esta fórmula. El vector azul es la fuerza gravitacional actuando en el péndulo, y los vectores violetas son la misma fuerza representada en componentes paralela y perpendicular al momento instantáneo del péndulo. La dirección de la velocidad instantánea del péndulo siempre apunta sobre el eje rojo, el cual es considerado el eje tangencial porque su dirección siempre es tangente al círuclo. Considere la segunda ley de Newton:
+$$F=ma$$
+donde $F$ es la suma de las fuerzas en el objeto, $m$ es su masa, y $a$ es la aceleración. Como solo nos importan los cambios en la velocidad, y el péndulo es forzado a permanecer en una trayectoria circular, aplicamos la ecuación de Newton solo para el eje tangencial. El vector corto y violeta representa la componente de la fuerza gravitacional en el eje tangencial y la trigonometría puede utilizarse para determinar su magnitud. Así:
+$$F=-mg\sin \theta=ma$$
+$$a=-g\sin \theta$$
+donde g es la aceleración de la gravedad cerca de la superficie de la Tierra. El signo negativo en el lado derecho implica que $\theta$ y $a$ siempre apuntan en direcciones opuestas. Eso tiene sentido, ya que cuando un péndulo oscila hacia la izquierda, esperamos que acelere de regreso hacia la derecha.\\
+
+Esta aceleración lineal $a$ a lo largo del eje rojo puede estar relacionada con el cambio en el ángulo $\theta$ por las fórmulas de longitud de arco; $\textbf{s}$ es la longitud de arco.
+$$s=l\theta$$
+$$v=\frac{ds}{dt}=l\frac{d\theta}{dt}$$
+$$a=\frac{d^2s}{dt^2}=l\frac{d^2 \theta}{dt^2}$$
+Así:
+$$l\frac{d^2\theta}{dt^2}=-g \sin \theta$$
+$$\frac{d^2\theta}{dt^2}+\frac{g}{l}\sin \theta=0$$
+
+\textbf{"Torque". Derivación de Ec.(1)}
+
+La ecuación (1) se puede obtener utilizando dos definiciones para torque
+$$\tau=r\times F=\frac{dL}{dt}$$
+Primero se comienza por definir el torque en la lenteja utilizando la fuerza debida a la gravedad.
+$$\tau=l\times F_g,$$
+donde $l$ es la longitud del vector del péndulo y $F_g$ es la fuerza debido a la gravedad. Por ahora, solo considere la magnitud del torque en el péndulo.
+$$|\tau|=-mgl\sin\theta$$
+donde $m$ es la masa del péndulo, $g$ es la aceleración de la gravedad, $l$ es la lóngitud del péndulo y $\theta$ es el ángulo entre el vector de longitud y el de la fuerza de gravedad.\\
+Lo siguiente es reescribir el momento angular.
+$$L=r\times p=mr\times(\omega\times r)$$
+De nuevo, solo considere la magnitud del momento angular
+$$|L|=mr^2\omega=ml^2\frac{d\theta}{dt}$$
+y su derivada respecto al tiempo
+$$\frac{d}{dt}|L|=ml^2\frac{d^2\theta}{dt^2}$$
+De acuerdo a $\tau=\frac{dL}{dt}$, podemos comparar las magnitudes y obtener
+$$-mgl\sin\theta=ml^2\frac{d^2\theta}{dt^2}$$
+así:
+$$\frac{d^2\theta}{dt^2}+\frac{g}{l}\sin\theta=0,$$
+resultado que es el mismo obtenido mediante el análisis de fuerza.
+
+\textbf{"Energía". Derivación de Ec. (1)}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.6]{figura2}
+\caption{Trigonometría de un péndulo simple.}
+\end{figure}
+
+También puede obtenerse mediante el principio la conservación de la energía mecánica: cualquier objeto que caiga una distancia vertical $h$ adquirirá energía cinéticaigual a la energía perdida en la caída. En otras palabras, la energía potencial gravitacional se convierte en energía cinética. El cambio en energía potencial está dado por
+$$\Delta U=mgh$$
+el cambio en la energía cinética (de un cuerpo que estaba en reposo) está dada por
+$$\Delta K =\frac{1}{2}mv^2$$
+Como nada de la energía se pierde, lo que se gana en una debe ser igual a lo que se pierde en la otra
+$$\frac{1}{2}mv^2=mgh$$
+el cambio en la velocidad para un valor dado del cambio en la altura puede expresarse como
+$$v=\sqrt{2gh}$$
+Usando la fórmula de longitud de arco anterior, esta ecuación puede ser escrita en términos de $\frac{d\theta}{dt}$
+$$v=l\frac{d\theta}{dt}=\sqrt{2gh}$$
+$$\frac{d\theta}={dt}\frac{1}{l}\sqrt{2gh}$$
+$h$ es la distancia vertical que el péndulo cae. Observe la figura 2, la cual presenta la trigonometría de un péndulo simple. Si el péndulo comienza a oscilar desde un ángulo inicial $\theta_0$, entonces $y_0$, la distancia vertical desde el tornillo está dada por
+$$y_0=l\cos\theta_0$$
+similarmente, para $y_1$ tenemos
+$$y_1=l\cos\theta$$
+luego $h$ es la diferencia de las dos
+$$h=l(\cos\theta-\cos\theta_0)$$
+en términos de $\frac{d\theta}{dt}$ da
+\begin{equation}
+\frac{d\theta}{dt}=\sqrt{\frac{2g}{l}(\cos\theta-\cos\theta_0)}
+\end{equation}
+$$\frac{d^2\theta}{dt^2}=\frac{1}{2}\frac{-(2g/l)\sin\theta}{sqrt{(2g/l)(\cos\theta-\cos\theta_0)}}\sqrt{\frac{2g}{l}(\cos\theta-\cos\theta_0)}=-\frac{g}{l}\sin\theta$$
+$$\frac{d^2\theta}{dt^2}+\frac{g}{l}\sin\theta=0$$
+obteniendo el mismo resultado que el obtenido con el análisis de fuerza.
+
+\textbf{Aproximación para ángulos pequeños}\\
+
+La ecuación diferencial anterior no es fácil de resolver y no existe solución que pueda ser escrita en términos de funciones elementales.  Sin embargo, agregado restricciones al tamaño de la amplitud de las oscilaciones brinda una forma de la cual su solución puede obtenerse fácilmente. Si se asume que el ángulo es mucho menor que 1 radián, o:
+
+$$\theta<<1$$
+luego, sustituyendo en la ecuación 1 utilizando la aproximación para ángulos pequeños
+$$\sin \theta \sim \theta$$
+produciendo la ecuación par aun oscilador armónico:
+$$\frac{d^2\theta}{dt^2}+\frac{g}{l}\theta=0$$
+
+El error debido a la aproximación es del orden de $\theta^3$ (de las series de Maclaurin para $\sin\theta$).
+
+Teniendo las condiciones iniciales $\theta(0)=\theta_0$, y $d\theta/dt(0)=0$, la solución se convierte a
+$$\theta(t)=\theta_0\cos\left (\sqrt{\frac{g}{l}}t\right)$$
+
+El movimiento es movimiento armónico simple donde $\theta_0$ es la semi-amplitud de la oscilación (es decir, el máximo ángulo entre la cuerda del péndulo y la vertical). El periodo del movimiento, el tiempo para completar una oscilación ("ida y venida") es
+$$T_0=2\pi\sqrt{\frac{l}{g}}\theta_0$$
+mejor conocida como Ley de Christiaan Huygens para el periodo. Note que bajo la aproximación de ángulo pequeño, el periodo es independiente de la amplitud $\theta_0$, esto es la propiedad de isocronismo que Galileo descubrió.\\
+
+\textbf{Regla de oro para la longitud del péndulo}
+$T_0=2\pi\sqrt{\frac{l}{g}}$ puede ser expresada como $l=\frac{g}{\pi^2}\times\frac{T_0^2}{4}$.
+Si se utiliza el SI (i.e. se mide en metros y segundos), y asumiendo que la medición se realiza en la superficie de la Tierra, entonces $g\approx 9.81 m/s^2$ y $g/\pi^2\approx 1$.\\
+
+Por lo tanto, una aproximación relativamente razonable para la longitud y el periodo son:
+$$l\approx \frac{T_0^2}{4}$$
+$$T_0 \approx 2\sqrt{l}$$
+donde $T_0$ es el número de segundos entre dos compases (un compás para cada lado del balanceo), y $l$ es medido en metros.
+
+\textbf{Periodo de Amplitud arbitraria}
+
+Para amplitudes que están más allá de la aproximación para ángulos peqeños, se puede calcular el periodo exacto, teniendo la ecuación para la velocidad angular obtenida a partir del método de energía.
+$$\frac{dt}{d\theta}=\sqrt{\frac{l}{2g}}\frac{1}{\sqrt{\cos\theta-\cos\theta_0}}$$
+y luego, integrando sobre un ciclo completo,
+$$T=t(\theta_0\rightarrow 0 \rightarrow -\theta_0 \rightarrow 0 \rightarrow \theta_0)$$
+o dos veces el medio ciclo
+$$T=2t(\theta_0 \rightarrow 0 \rightarrow -\theta_0)$$
+0 cuatro veces el cuarto ciclo
+$$T=4t(\theta_0 \rightarrow 0)$$
+lo que nos lleva a
+$$T=4\sqrt{\frac{l}{2g}}\int_{0}^{\infty} \! \frac{1}{\cos\theta-\cos\theta_0}\,d\theta$$
+
+Nótese que esta integral diverge a como $\theta_0$ se acerca a la vertical
+$$\lim_{\theta_0 \to \pi}T=\infty$$
+de manera que un péndulo con justamente la energía necesaria para moverse verticalmente, en realidad nunca lo conseguirá.(Por el contrario, un péndulo cercan a su máximo puede tomar un tiempo largo arbitrario para caer)
+Esta integral puede reescribirse en términos de integrales elípticas como
+$$T=4\sqrt{\frac{l}{g}}F\left (\frac{\theta_0}{2},\csc\frac{\theta_0}{2})\right)\csc \frac{\theta_0}{2}$$
+donde $F$ es la integral elíptica completa del primer tipo definida por
+
+$$F(\varphi,k)=\int_{0}^{\varphi}\! \frac{1}{\sqrt{1-k^2\sin^2u}} \, du $$
+o mas consisamente con la sustitución $\sin u=\frac{sin\frac{\theta}{2}}{\sin \frac{\theta_0}{3}}$ expresando $\theta$ en términos de $u$,
+\begin{equation}
+T=4\sqrt{\frac{l}{g}}K \Bigl(\sin^2\Bigl(\frac{\theta_0}{2}\Bigl)\Bigl)
+\end{equation}
+donde $K$ es la integral elíptica completa de el primer tipo definida por
+$$K(k)=F\Bigl(\frac{\pi}{2},k \Bigl)=\int_{0}^{\pi/2} \! \frac{1}{\sqrt{1-k^2\sin^2u}} \, du$$
+ comparación con la aproximación a la solución completa, considerar el periodo de un péndulo de $1m$ de longitud en la Tierra $(g=9.80665m/s^2)$ con un ángulo inicial de 10 grados, es
+ $$4\sqrt{\frac{1m}{g}}K \Bigl(sin^2 \Bigl( \frac{10^o}{2}\Bigl)\Bigl)\approx 2.0102s$$
+La aproximación lineal da 
+$$2\pi\sqrt{\frac{1m}{g}}\approx 2.0064s$$
+La diferencia entre los dos valores, menos del $0.2\%$, es mucho menos que la causada por la variación de $g$ con la localización geográfica. De aquí, hay muchas maneras de proceder para calcular la integral elíptica:
+
+\textbf{Solución Polinomial de Legendre para la integral elíptica}
+Dada la ecuación 3 y la solución polinomial de Legendre para la integal elíptica:
+$$K(k)=\frac{\pi}{2}\Bigl\{1+\Bigl(\frac{1}{2}\Bigl)^2k^2+\Bigl(\frac{1\cdot 3}{2\cdot 4}\Bigl)^2k^4+ \cdots +\Bigl[\frac{(2n-1)!!}{(2n)!!^2}\Bigl]^2k^{2n}+\cdots\Bigl\}$$
+donde $n!!$ denota el doble factorial, una solución exacta al periodo de un péndulo es
+$$T=2\pi\sqrt{\frac{l}{g}}\Bigl(1+\Bigl(\frac{1}{2}\Bigl)^2\sin^2\Bigl(\frac{\theta_0}{2}\Bigl)+\Bigl(\frac{1\cdot 3}{2\cdot 4}\Bigl)^2\sin^4\Bigl(\frac{\theta_0}{2}\Bigl)+\Bigl(\frac{1 \cdot 3 \cdot 5}{2 \cdot 4 \cdot 6}\Bigl)^2 \sin^6\Bigl(\frac{\theta_0}{2}\Bigl)+\cdots\Bigl)$$
+$$T=2\pi\sqrt{\frac{l}{g}}\cdot\sum_{n=0}^{\infty}\Bigl[\Big(\frac{(2n)!}{(2^n \cdot n!)^2}\Bigl)\cdot \sin^{2n}\Bigl(\frac{\theta_0}{2}\Bigl)\Bigl]$$
+La figura 4 muestre el error relativo usando las series de potencia. $T_0$ es la aproximación lineal, y $T_2$ to $T_{10}$ incluyen respectivamente los términos desde la segundo hasta la décima potencia.
+
+\textbf{Solución de Series de potencia para la integral elíptica}
+Otra formulación de la solución anterior puede encontrarse con las siguientes series de Maclaurin:
+$$\sin\frac{\theta_0}{2}=\frac{1}{2}\theta_0-\frac{1}{48}\theta_0^3+\frac{1}{3840}\theta_0^5-\frac{1}{645120}\theta_0^7+\cdots$$
+es usado en la solución polinomial de Legendre anterior. La serie de potencia resultante es:
+$$T=2\pi\sqrt{\frac{l}{g}}\Bigl(1+\frac{1}{16}\theta_0^2+\frac{11}{3072}\theta_0^4+\frac{173}{737280}\theta_0^6+\frac{22931}{1321205760}\theta_0^8+\frac{1319183}{951268147200}\theta_0^{10}+\frac{233526463}{278326886400}\theta_0^{12}+\cdots\Bigl)$$
+
+\textbf{Solución del significado aritmético-geométrico para la integral elíptica}
+Dada la Ec. (3) y  la solucón del significado aritmético-geométrico para la integral elíptica:
+$$K(k)=\frac{\pi/2}{M(1,\cos(\theta_0/2))}\sqrt{\frac{l}{g}}$$
+donde $M(x,y)$ es el significado aritmético-geométrico de $x$ y $y$.\\
+Esto produce una fórmula alternativa que converge más rápido para el periodo:
+$$T=\frac{2\pi}{M(1,cos(\theta_0/2))}\sqrt{\frac{l}{g}}$$
+
+\end{document}
